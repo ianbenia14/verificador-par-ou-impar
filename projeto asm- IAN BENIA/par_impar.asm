@@ -1,6 +1,4 @@
-neanderwin.exe	2016-04-06	529.5 kB	4
-neanderwin.zipneanderwin.exe	2016-04-06	529.5 kB	4
-neanderwin.zip;---------------------------------------------------
+;---------------------------------------------------
 ; Programa: Verificador de Par ou Ímpar
 ; Autor: Ian Benia
 ;---------------------------------------------------
@@ -9,23 +7,23 @@ neanderwin.zip;---------------------------------------------------
 ;---------------------------------------------------
 
         ORG 0
-        LDA NUM         ; Carrega o número
-        STA TEMP        ; Copia para TEMP para manipular
+        LDA     NUM         ; Carrega o número
+        STA     TEMP        ; Copia para TEMP para manipular
 
-LOOP:   LDA TEMP
-        SUB DOIS
-        JN FIM          ; Se negativo, sai do loop
-        STA TEMP        ; Armazena resultado da subtração
-        JMP LOOP        ; Continua subtraindo
+LOOP:   LDA     TEMP
+        SUB     DOIS
+        JN      FIM         ; Se negativo, sai do loop
+        STA     TEMP        ; Armazena resultado da subtração
+        JMP     LOOP        ; Continua subtraindo
 
-FIM:    LDA TEMP
-        STA RESULTADO   ; Salva resultado: 0 (par) ou 1 (ímpar)
+FIM:    LDA     TEMP
+        STA     RESULTADO   ; Salva resultado: 0 (par) ou 1 (ímpar)
 
-        HLT             ; Fim do programa
+        HLT                 ; Fim do programa
 
 ; --- Dados ---
         ORG 20
-NUM:        DB 7           ; Número a ser verificado (mude para testar)
+NUM:        DB 7            ; Número a ser verificado (mude para testar)
 TEMP:       DB 0
 RESULTADO:  DB 0
 DOIS:       DB 2
